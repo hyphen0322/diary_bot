@@ -3,7 +3,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, AIMessage
 
 # ▼ ここにあなたのAPIキーを入力してください（安全な運用は後述）
-GOOGLE_API_KEY = "AIzaSyAFEhzZzt2pSa7z3mH75RTcUje22v6Sf3U"
+GOOGLE_API_KEY = ""
 
 # Geminiモデルを使うチャットボットの初期化
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash-latest", google_api_key=GOOGLE_API_KEY)
