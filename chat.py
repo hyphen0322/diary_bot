@@ -19,13 +19,6 @@ def my_sentiment_analyzer(text):
     result = classifier(text)[0]
     label = result["label"]
     score = result["score"]
-
-    if label == "positive":
-        print("ポジティブなテキストです！")
-    elif label == "negative":
-        print("ネガティブなテキストです！")
-    else:
-        print("ニュートラルなテキストです！")
         
     return label, score
 
