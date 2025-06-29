@@ -6,7 +6,7 @@ from datetime import datetime
 import os
 from transformers import pipeline
 
-# ▼ ここにあなたのAPIキーを入力してください（安全な運用は後述）
+# ▼ ここにあなたのAPIキーを入力してください
 GOOGLE_API_KEY = "AIzaSyAyDSsqG_N6G7RlqqK34S3d02mH5uhimAM"
 
 # Geminiモデルを使うチャットボットの初期化
