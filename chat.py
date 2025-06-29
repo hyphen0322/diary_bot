@@ -4,6 +4,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 import pandas as pd
 from datetime import datetime
 import os
+from transformers import pipeline
 
 # ▼ ここにあなたのAPIキーを入力してください（安全な運用は後述）
 GOOGLE_API_KEY = "AIzaSyAyDSsqG_N6G7RlqqK34S3d02mH5uhimAM"
@@ -13,10 +14,20 @@ llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash-latest", google_api_key=GOO
 
 #感情分析
 def my_sentiment_analyzer(text):
-        label_result = "POSITIVE"  # 仮のラベル
-        score_result = 0.99       # 仮のスコア
+    classifier = pipeline("sentiment-analysis",
+    model="christian-phu/bert-finetuned-japanese-sentiment")
+    result = classifier(text)[0]
+    label = result["label"]
+    score = result["score"]
+
+    if label == "positive":
+        print("ポジティブなテキストです！")
+    elif label == "negative":
+        print("ネガティブなテキストです！")
+    else:
+        print("ニュートラルなテキストです！")
         
-        return label_result, score_result
+    return label, score
 
 #日記の保存    
 def save_diary_log(user_input, label, score):
