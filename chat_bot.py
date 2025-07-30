@@ -8,7 +8,7 @@ import os
 from transformers import pipeline
 
 # ▼ APIキーを入力
-GOOGLE_API_KEY = "AIzaSyAyDSsqG_N6G7RlqqK34S3d02mH5uhimAM"
+GOOGLE_API_KEY = ""
 
 # LLM初期化
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash-latest", google_api_key=GOOGLE_API_KEY)
